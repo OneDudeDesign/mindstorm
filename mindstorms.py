@@ -1,48 +1,47 @@
 import turtle
 
-window = turtle.Screen()
-window.bgcolor("red")
+
+def draw_square(some_turtle):
+    square_sides = 0
+    while square_sides < 4:
+        some_turtle.forward(100)
+        some_turtle.right(90)
+        square_sides = square_sides + 1
 
 
-def draw_square():
+def draw_circle(some_turtle):
+    some_turtle.circle(100)
+
+
+def draw_triangle(some_turtle):
+    some_turtle.forward(100)
+    some_turtle.left(90)
+    some_turtle.forward(100)
+    some_turtle.left(135)
+    some_turtle.forward(141)
+    some_turtle.left(135)
+
+
+def draw_art():
+    window = turtle.Screen()
+    window.bgcolor("red")
     brad = turtle.Turtle()
     brad.shape('turtle')
     brad.color('yellow')
     brad.speed(2)
+    draw_square(brad)
 
-    square_sides = 0
-    while square_sides < 4:
-        brad.forward(100)
-        brad.right(90)
-        square_sides = square_sides + 1
-
-
-draw_square()
-
-
-def angie_circle():
     angie = turtle.Turtle()
     angie.shape('arrow')
     angie.color('blue')
-    angie.circle(100)
+    draw_circle(angie)
 
-
-angie_circle()
-
-
-def todd_triangle():
     todd = turtle.Turtle()
     todd.shape('triangle')
     todd.color('green')
+    draw_triangle(todd)
 
-    todd.forward(100)
-    todd.left(90)
-    todd.forward(100)
-    todd.left(135)
-    todd.forward(141)
-    todd.left(135)
+    window.exitonclick()
 
 
-todd_triangle()
-
-window.exitonclick()
+draw_art()
